@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, } from 'react';
 import { Box, Heading, Center, Button, Text, Input } from '@chakra-ui/react'
 
 function App() {
@@ -17,9 +17,13 @@ function App() {
   const [ajout, setAjout] = useState('');
 
   // Function ajoute custom
-  function handleClick() {
-    restoArray.push(inputRef.current.value);
-    setAjout(inputRef.current.value)
+  function addList() {
+    if (inputRef.current.value === "" || inputRef.current.value.length <= 3) {
+      setAjout("Ajoute de la vraie nourriture stp")
+    } else {
+      restoArray.push(inputRef.current.value);
+      setAjout('Tu a ajouté ' + inputRef.current.value)
+    }
   }
 
   // Function pour set le resto
@@ -54,7 +58,7 @@ function App() {
         </Center>
         <Text textAlign='center'>Tu a ajouté {ajout}</Text>
         <Center><Input mt='10px' w='200px' placeholder='Que veux tu ajouté ?' size='md' bg='white' ref={inputRef} /></Center>
-        <Center><Button mt='10px' w='150px' h='40px' colorScheme='green' onClick={handleClick}>Ajouter a la liste</Button></Center>
+        <Center><Button mt='10px' w='150px' h='40px' colorScheme='green' onClick={addList}>Ajouter a la liste</Button></Center>
       </Box>
     );
     // si il l'user a random alors on lui affiche le nom du resto
