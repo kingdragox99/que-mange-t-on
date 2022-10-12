@@ -8,7 +8,7 @@ function App() {
   // Set le nom du resto
   const [resto, setResto] = useState('');
   // Set le nom du resto en array
-  const [restoArray, setRestoArray] = useState(["Bonus tu a gagner un roll", "Burger King", "Kebab", "Pasta", "La pompe a essence", "Pizza", "Poké Ball", "Point Chaud", "Petit tomates", "Le choix de Dorian", "Tacos", "Rien"]);
+  const [restoArray, setRestoArray] = useState(["Bonus tu a gagner un roll", "Burger King", "Kebab", "Pasta", "La pompe a essence", "Pizza", "Poké Ball", "Point Chaud", "Petite tomates", "Le choix de Dorian", "Tacos", "Rien","Frites",]);
   // Pas content count
   const [non, setNon] = useState(0);
   // Pas content tu casse les couilles
